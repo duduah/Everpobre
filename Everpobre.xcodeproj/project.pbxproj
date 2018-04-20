@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */; };
 		B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */; };
 		B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD08207FE57D006DEE17 /* ViewController.swift */; };
 		B3EEAD0C207FE57D006DEE17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EEAD0A207FE57D006DEE17 /* Main.storyboard */; };
 		B3EEAD0E207FE57F006DEE17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3EEAD0D207FE57F006DEE17 /* Assets.xcassets */; };
 		B3EEAD11207FE57F006DEE17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EEAD0F207FE57F006DEE17 /* LaunchScreen.storyboard */; };
+		B3EEAD1B207FE973006DEE17 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD1A207FE973006DEE17 /* NotesTableViewController.swift */; };
+		B3EEAD1D207FEE3C006DEE17 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD1C207FEE3C006DEE17 /* NoteViewController.swift */; };
+		B3EEAD20207FF1A0006DEE17 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD1F207FF1A0006DEE17 /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		B3EEAD03207FE57D006DEE17 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3EEAD08207FE57D006DEE17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		B3EEAD0D207FE57F006DEE17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3EEAD10207FE57F006DEE17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3EEAD12207FE57F006DEE17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3EEAD1A207FE973006DEE17 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		B3EEAD1C207FEE3C006DEE17 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		B3EEAD1F207FF1A0006DEE17 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +63,41 @@
 			isa = PBXGroup;
 			children = (
 				B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */,
-				B3EEAD08207FE57D006DEE17 /* ViewController.swift */,
+				B3EEAD1E207FF18E006DEE17 /* Models */,
+				B3EEAD18207FE768006DEE17 /* Controllers */,
+				B3EEAD19207FE7B8006DEE17 /* Views */,
 				B3EEAD0A207FE57D006DEE17 /* Main.storyboard */,
 				B3EEAD0D207FE57F006DEE17 /* Assets.xcassets */,
 				B3EEAD0F207FE57F006DEE17 /* LaunchScreen.storyboard */,
 				B3EEAD12207FE57F006DEE17 /* Info.plist */,
+				B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */,
 			);
 			path = Everpobre;
+			sourceTree = "<group>";
+		};
+		B3EEAD18207FE768006DEE17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3EEAD08207FE57D006DEE17 /* ViewController.swift */,
+				B3EEAD1A207FE973006DEE17 /* NotesTableViewController.swift */,
+				B3EEAD1C207FEE3C006DEE17 /* NoteViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B3EEAD19207FE7B8006DEE17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B3EEAD1E207FF18E006DEE17 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B3EEAD1F207FF1A0006DEE17 /* Note.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +171,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3EEAD20207FF1A0006DEE17 /* Note.swift in Sources */,
+				B3EEAD1D207FEE3C006DEE17 /* NoteViewController.swift in Sources */,
 				B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */,
+				B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */,
 				B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */,
+				B3EEAD1B207FE973006DEE17 /* NotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
