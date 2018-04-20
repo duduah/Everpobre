@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */; };
+		B3B3173B208A5F3A006FF8C2 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3173A208A5F3A006FF8C2 /* Date+Additions.swift */; };
 		B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */; };
 		B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD08207FE57D006DEE17 /* ViewController.swift */; };
 		B3EEAD0C207FE57D006DEE17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EEAD0A207FE57D006DEE17 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
+		B3B3173A208A5F3A006FF8C2 /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
 		B3EEAD03207FE57D006DEE17 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3EEAD08207FE57D006DEE17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				B3EEAD0F207FE57F006DEE17 /* LaunchScreen.storyboard */,
 				B3EEAD12207FE57F006DEE17 /* Info.plist */,
 				B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */,
+				B3B3173A208A5F3A006FF8C2 /* Date+Additions.swift */,
 			);
 			path = Everpobre;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */,
 				B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */,
 				B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */,
+				B3B3173B208A5F3A006FF8C2 /* Date+Additions.swift in Sources */,
 				B3EEAD1B207FE973006DEE17 /* NotesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,8 +12,12 @@ class NoteViewController: UIViewController {
     
     var note: Note? {
         didSet {
+            loadViewIfNeeded()
             titleTextField.text = note?.title
-            navigationItem.title = note?.title
+            dateLabel.text = Date.getDateString(from: (note?.date)!)
+            expirationDate.text = Date.getDateString(from: (note?.expirationDate)!)
+            noteTextView.text = note?.noteTextView
+//            navigationItem.title = note?.title
         }
     }
     
@@ -83,16 +87,47 @@ class NoteViewController: UIViewController {
         return image
     }()
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = note == nil ? "New note" : "Edit note"
+//        navigationController?.isToolbarHidden = false
         let notesVC = NotesTableViewController()
         notesVC.delegate = self
+        setupUI()
+print("viewDidLoad")
         
         view.backgroundColor = .white
-        print("viewDidLoad")
-        
-        setupUI()
+
+//        let photoBarButton = UIBarButtonItem(barButtonSystemItem: .camera,
+//                                             target: self,
+//                                             action: #selector(getPhoto))
+//        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+//                                       target: nil,
+//                                       action: nil)
+//
+//        let mapBarButton = UIBarButtonItem(title: "Map",
+//                                           style: .done,
+//                                           target: self,
+//                                           action: #selector(addLocation))
+//        self.setToolbarItems([photoBarButton, flexible, mapBarButton], animated: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = note == nil ? "New note" : "Edit note"
+    }
+    
+    @objc func getPhoto() {
+        
+    }
+    
+    @objc func addLocation()
+    {
+        
+    }
+
     
     // MARK: - UI Setup
     private func setupUI() {
@@ -137,17 +172,39 @@ class NoteViewController: UIViewController {
         expirationDate.widthAnchor.constraint(equalToConstant: dateFieldWidth).isActive = true
         expirationDate.heightAnchor.constraint(equalTo: titleTextField.heightAnchor).isActive = true
         
+        let a = UIToolbar()
+        a.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(a)
+        a.topAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        a.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        a.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        a.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        let photoBarButton = UIBarButtonItem(barButtonSystemItem: .camera,
+                                             target: self,
+                                             action: #selector(getPhoto))
+        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                       target: nil,
+                                       action: nil)
+        
+        let mapBarButton = UIBarButtonItem(title: "Map",
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(addLocation))
+        a.setItems([photoBarButton, flexible, mapBarButton], animated: true)
+        
         view.addSubview(noteTextView)
         noteTextView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: spaceBetweenFields).isActive = true
         noteTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: spaceBetweenFields).isActive = true
         noteTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -spaceBetweenFields).isActive = true
-        noteTextView.heightAnchor.constraint(equalToConstant: 350).isActive = true
+        noteTextView.bottomAnchor.constraint(equalTo: a.topAnchor, constant: -spaceBetweenFields).isActive = true
         
         noteTextView.addSubview(imageView)
         imageView.topAnchor.constraint(equalTo: (imageView.superview?.topAnchor)!, constant: spaceBetweenFields).isActive = true
         imageView.leftAnchor.constraint(equalTo: (imageView.superview?.leftAnchor)!, constant: spaceBetweenFields).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
 
 //        navigationController?.isToolbarHidden = false
 //        let photoBarButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
