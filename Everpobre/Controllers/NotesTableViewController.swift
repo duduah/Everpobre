@@ -53,11 +53,13 @@ class NotesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let note = notes[indexPath.row]
         self.delegate?.notesTableViewController(self, didSelectNote: note)
         let noteVC = NoteViewController()
         noteVC.note = note
-
+        let navigationVC = UINavigationController(rootViewController: noteVC)
+        showDetailViewController(navigationVC, sender: self)
 //        let navigationVC = UINavigationController(rootViewController: noteVC)
 
 //        showDetailViewController(navigationVC, sender: self)
