@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Everpobre/Controllers/NoteViewController.swift"
-            timestampString = "545935884.939833"
+            timestampString = "545936443.019227"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "notesTableViewController(_:didSelectNote:)"
             landmarkType = "7">
          </BreakpointContent>

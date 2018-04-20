@@ -16,9 +16,9 @@ protocol NotesTableViewControllerDelegate: AnyObject {
 class NotesTableViewController: UITableViewController {
     
     // MARK: - Attributes
-    let notes = [Note(title: "Title 1", date: Date(), expirationDate: Date(), noteTextView: "Text for note 1"),
-                 Note(title: "Title 2", date: Date(), expirationDate: Date(), noteTextView: "Text for note 2"),
-                 Note(title: "Title 3", date: Date(), expirationDate: Date(), noteTextView: "Text for note 3")]
+    let notes = [Note(title: "Title 1", date: Date(), expirationDate: Date(), noteTextView: "Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1. Text for note 1."),
+                 Note(title: "Title 2", date: Date(), expirationDate: Date(), noteTextView: "Text for note 2. Text for note 2. Text for note 2. Text for note 2. Text for note 2. Text for note 2. "),
+                 Note(title: "Title 3", date: Date(), expirationDate: Date(), noteTextView: "Text for note 3. Text for note 3. Text for note 3. Text for note 3.")]
     
     weak var delegate: NotesTableViewControllerDelegate?
     

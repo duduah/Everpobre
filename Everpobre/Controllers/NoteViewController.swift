@@ -76,7 +76,12 @@ class NoteViewController: UIViewController {
     }()
 
     
-    //    let imageView = UIImageView()
+    let imageView: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.backgroundColor = .yellow
+        return image
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,9 +142,13 @@ class NoteViewController: UIViewController {
         noteTextView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: spaceBetweenFields).isActive = true
         noteTextView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -spaceBetweenFields).isActive = true
         noteTextView.heightAnchor.constraint(equalToConstant: 350).isActive = true
-        /*
-         titleExpirationDateLabel
-         */
+        
+        noteTextView.addSubview(imageView)
+        imageView.topAnchor.constraint(equalTo: (imageView.superview?.topAnchor)!, constant: spaceBetweenFields).isActive = true
+        imageView.leftAnchor.constraint(equalTo: (imageView.superview?.leftAnchor)!, constant: spaceBetweenFields).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+
 //        navigationController?.isToolbarHidden = false
 //        let photoBarButton = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: nil)
 //        self.setToolbarItems([photoBarButton], animated: false)
