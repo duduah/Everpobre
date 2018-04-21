@@ -16,35 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         let notebooks = DataManager.shared.fetchNotebooks()
         if (notebooks.count == 0) {
-            let splitVC = window?.rootViewController as! UISplitViewController
-            let notebooksVC = NotebookTableViewController(fetchedResultsController: DataManager.shared.fetchedRCNotebook() as! NSFetchedResultsController<NSFetchRequestResult>, style: .plain)
-            let navVC = UINavigationController(rootViewController: notebooksVC)
-            let notebookVC = NotebookController()
-
-            splitVC.viewControllers = [navVC, notebookVC.wrapViewInNavigation()]
-//            guard let splitViewController = window?.rootViewController as? UISplitViewController,
-//                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-//                let masterViewController = leftNavController.topViewController as? NotebookTableViewController,
-//                let detailViewController = splitViewController.viewControllers.last as? NotebookController
-//                else {
-//                    fatalError()
-//            }
-
-            notebooksVC.delegate = notebookVC
-
-        } else {
-            guard let splitViewController = window?.rootViewController as? UISplitViewController,
-                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-                let masterViewController = leftNavController.topViewController as? NotesTableViewController,
-                let detailViewController = splitViewController.viewControllers.last as? NoteViewController
-                else {
-                    fatalError()
+            let context = DataManager.shared.persistantContainer.viewContext
+            let notebook = Notebook(name: "My First Notebool", inContext: context)
+            let _ = Note(title: "My First Note", noteText: "Hello, Everpobre!", notebook: notebook, Context: context)
+            
+            do {
+                try context.save()
+            } catch let saveErr {
+                print("Error saving the first notebook and note:", saveErr)
             }
-
-            masterViewController.delegate = detailViewController
         }
+
+        guard let splitViewController = window?.rootViewController as? UISplitViewController,
+            let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+            let masterViewController = leftNavController.topViewController as? NotesTableViewController,
+            let detailViewController = splitViewController.viewControllers.last as? NoteViewController
+            else {
+                fatalError()
+        }
+        
+        masterViewController.delegate = detailViewController
+
 
         return true
     }

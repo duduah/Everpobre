@@ -67,7 +67,7 @@ class NotebookController: UIViewController {
     @objc private func handleSave() {
         let context = DataManager.shared.persistantContainer.viewContext
         
-        _ = Notebook(name: nameTextField.text!, inContext: context)
+        let _ = Notebook(name: nameTextField.text!, inContext: context)
         
         do {
             try context.save()

@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import CoreData
 
-//struct Note {
-//    let title: String
-//    let creationDate: Date
-//    let expirationDate: Date
-//    let noteTextView: String
-//
-//
-////    @NSManaged public var notebook: Notebook?
+extension Note {
+    convenience init(title: String, expirationDate: Date? = nil, noteText: String, notebook: Notebook, Context context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.title = title
+        self.creationDate = Date()
+        if let expirationD = expirationDate {
+            self.expirationDate = expirationD
+        }
+        self.noteText = noteText
+        self.notebook = notebook
+    }
+}
 ////    @NSManaged public var photo: PhotoContainer?
-//}
 

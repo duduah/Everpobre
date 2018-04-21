@@ -18,15 +18,16 @@ protocol NotebookTableViewControllerDelegate : AnyObject {
 class NotebookTableViewController: CoreDataTableViewController {
     
     // MARK: - Properties
-    let notebooks = DataManager.shared.fetchNotebooks()
-    
+    lazy var notebooks: [Notebook] = {
+        self.fetchedResultsController?.sections![0].objects
+        }() as! [Notebook]
+
     weak var delegate: NotebookTableViewControllerDelegate?
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Notebook tableView viewDidLoad")
         title = "Notebooks"
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CELL_NOTEBOOK_ID)
@@ -72,6 +73,7 @@ class NotebookTableViewController: CoreDataTableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         let notebook = notebooks[indexPath.row]
         self.delegate?.notebookTableViewController(self, didSelectNotebook: notebook)
         

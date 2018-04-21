@@ -102,7 +102,6 @@
 				B3EEAD1E207FF18E006DEE17 /* Models */,
 				B3EEAD18207FE768006DEE17 /* Controllers */,
 				B3EEAD19207FE7B8006DEE17 /* Views */,
-				B3EEAD0A207FE57D006DEE17 /* Main.storyboard */,
 				B3EEAD0D207FE57F006DEE17 /* Assets.xcassets */,
 				B3EEAD0F207FE57F006DEE17 /* LaunchScreen.storyboard */,
 				B3EEAD12207FE57F006DEE17 /* Info.plist */,
@@ -128,6 +127,7 @@
 		B3EEAD19207FE7B8006DEE17 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B3EEAD0A207FE57D006DEE17 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
