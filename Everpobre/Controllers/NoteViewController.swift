@@ -10,13 +10,14 @@ import UIKit
 
 class NoteViewController: UIViewController {
     
+    // MARK: - Properties
     var note: Note? {
         didSet {
-            loadViewIfNeeded()
+//            loadViewIfNeeded()
             titleTextField.text = note?.title
-            dateLabel.text = Date.getDateString(from: (note?.date)!)
+            dateLabel.text = Date.getDateString(from: (note?.creationDate)!)
             expirationDate.text = Date.getDateString(from: (note?.expirationDate)!)
-            noteTextView.text = note?.noteTextView
+            noteTextView.text = note?.noteText
 //            navigationItem.title = note?.title
         }
     }
@@ -90,10 +91,10 @@ class NoteViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = note == nil ? "New note" : "Edit note"
+        title = note == nil ? "New note" : "Edit note"
 //        navigationController?.isToolbarHidden = false
-        let notesVC = NotesTableViewController()
-        notesVC.delegate = self
+//        let notesVC = NotesTableViewController()
+//        notesVC.delegate = self
         setupUI()
 print("viewDidLoad")
         
@@ -116,7 +117,7 @@ print("viewDidLoad")
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationItem.title = note == nil ? "New note" : "Edit note"
+        title = note == nil ? "New note" : "Edit note"
     }
     
     @objc func getPhoto() {
@@ -131,11 +132,6 @@ print("viewDidLoad")
     
     // MARK: - UI Setup
     private func setupUI() {
-        let navControllerHeight: CGFloat = 64
-        let spaceBetweenFields: CGFloat = 8
-        let labelHeight: CGFloat = 30
-        let dateFieldWidth: CGFloat = 110
-        
         view.addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: navControllerHeight).isActive = true
         titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: spaceBetweenFields).isActive = true

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,14 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-//        window = UIWindow()
-//        window?.makeKeyAndVisible()
-//        
-//        let navigationVC = UINavigationController(rootViewController: NotesTableViewController())
-//        
-//        window?.rootViewController = navigationVC
-        
+        let notebooks = DataManager.shared.fetchNotebooks()
+        if (notebooks.count == 0) {
+            let splitVC = window?.rootViewController as! UISplitViewController
+            let notebooksVC = NotebookTableViewController(fetchedResultsController: DataManager.shared.fetchedRCNotebook() as! NSFetchedResultsController<NSFetchRequestResult>, style: .plain)
+            let navVC = UINavigationController(rootViewController: notebooksVC)
+            let notebookVC = NotebookController()
+
+            splitVC.viewControllers = [navVC, notebookVC.wrapViewInNavigation()]
+//            guard let splitViewController = window?.rootViewController as? UISplitViewController,
+//                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+//                let masterViewController = leftNavController.topViewController as? NotebookTableViewController,
+//                let detailViewController = splitViewController.viewControllers.last as? NotebookController
+//                else {
+//                    fatalError()
+//            }
+
+            notebooksVC.delegate = notebookVC
+
+        } else {
+            guard let splitViewController = window?.rootViewController as? UISplitViewController,
+                let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
+                let masterViewController = leftNavController.topViewController as? NotesTableViewController,
+                let detailViewController = splitViewController.viewControllers.last as? NoteViewController
+                else {
+                    fatalError()
+            }
+
+            masterViewController.delegate = detailViewController
+        }
+
         return true
     }
 }

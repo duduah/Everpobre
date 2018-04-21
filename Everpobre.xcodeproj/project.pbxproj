@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */; };
 		B3B3173B208A5F3A006FF8C2 /* Date+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3173A208A5F3A006FF8C2 /* Date+Additions.swift */; };
+		B3B3173D208A73CC006FF8C2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3173C208A73CC006FF8C2 /* CoreDataManager.swift */; };
+		B3B31740208A7B39006FF8C2 /* EverpobreModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3B3173E208A7B39006FF8C2 /* EverpobreModels.xcdatamodeld */; };
+		B3B31744208B3D2A006FF8C2 /* NotebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31743208B3D2A006FF8C2 /* NotebookController.swift */; };
+		B3B31746208B3D39006FF8C2 /* NotebookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31745208B3D39006FF8C2 /* NotebookTableViewController.swift */; };
+		B3B31749208B415C006FF8C2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31748208B415C006FF8C2 /* Utils.swift */; };
+		B3B3174B208B4DCC006FF8C2 /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B3174A208B4DCC006FF8C2 /* CoreDataTableViewController.swift */; };
+		B3B31752208B61B3006FF8C2 /* Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31751208B61B3006FF8C2 /* Notebook.swift */; };
+		B3B31754208B67B0006FF8C2 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B31753208B67B0006FF8C2 /* UIViewController+Additions.swift */; };
 		B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */; };
 		B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EEAD08207FE57D006DEE17 /* ViewController.swift */; };
 		B3EEAD0C207FE57D006DEE17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EEAD0A207FE57D006DEE17 /* Main.storyboard */; };
@@ -22,6 +30,14 @@
 /* Begin PBXFileReference section */
 		B3B31738208A50F5006FF8C2 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		B3B3173A208A5F3A006FF8C2 /* Date+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Additions.swift"; sourceTree = "<group>"; };
+		B3B3173C208A73CC006FF8C2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B3B3173F208A7B39006FF8C2 /* EverpobreModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverpobreModels.xcdatamodel; sourceTree = "<group>"; };
+		B3B31743208B3D2A006FF8C2 /* NotebookController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookController.swift; sourceTree = "<group>"; };
+		B3B31745208B3D39006FF8C2 /* NotebookTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookTableViewController.swift; sourceTree = "<group>"; };
+		B3B31748208B415C006FF8C2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B3B3174A208B4DCC006FF8C2 /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
+		B3B31751208B61B3006FF8C2 /* Notebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notebook.swift; sourceTree = "<group>"; };
+		B3B31753208B67B0006FF8C2 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 		B3EEAD03207FE57D006DEE17 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3EEAD08207FE57D006DEE17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3B31747208B414B006FF8C2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3B31748208B415C006FF8C2 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3B3174C208B512D006FF8C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B3B31753208B67B0006FF8C2 /* UIViewController+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B3EEACFA207FE57D006DEE17 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				B3EEAD06207FE57D006DEE17 /* AppDelegate.swift */,
+				B3B3174C208B512D006FF8C2 /* Extensions */,
+				B3B31747208B414B006FF8C2 /* Utils */,
 				B3EEAD1E207FF18E006DEE17 /* Models */,
 				B3EEAD18207FE768006DEE17 /* Controllers */,
 				B3EEAD19207FE7B8006DEE17 /* Views */,
@@ -84,6 +118,9 @@
 				B3EEAD08207FE57D006DEE17 /* ViewController.swift */,
 				B3EEAD1A207FE973006DEE17 /* NotesTableViewController.swift */,
 				B3EEAD1C207FEE3C006DEE17 /* NoteViewController.swift */,
+				B3B31743208B3D2A006FF8C2 /* NotebookController.swift */,
+				B3B31745208B3D39006FF8C2 /* NotebookTableViewController.swift */,
+				B3B3174A208B4DCC006FF8C2 /* CoreDataTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -99,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				B3EEAD1F207FF1A0006DEE17 /* Note.swift */,
+				B3B31751208B61B3006FF8C2 /* Notebook.swift */,
+				B3B3173C208A73CC006FF8C2 /* CoreDataManager.swift */,
+				B3B3173E208A7B39006FF8C2 /* EverpobreModels.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,13 +214,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B31746208B3D39006FF8C2 /* NotebookTableViewController.swift in Sources */,
+				B3B31740208A7B39006FF8C2 /* EverpobreModels.xcdatamodeld in Sources */,
 				B3EEAD20207FF1A0006DEE17 /* Note.swift in Sources */,
 				B3EEAD1D207FEE3C006DEE17 /* NoteViewController.swift in Sources */,
 				B3EEAD09207FE57D006DEE17 /* ViewController.swift in Sources */,
+				B3B31744208B3D2A006FF8C2 /* NotebookController.swift in Sources */,
+				B3B31752208B61B3006FF8C2 /* Notebook.swift in Sources */,
 				B3B31739208A50F5006FF8C2 /* UIColor+theme.swift in Sources */,
+				B3B31754208B67B0006FF8C2 /* UIViewController+Additions.swift in Sources */,
 				B3EEAD07207FE57D006DEE17 /* AppDelegate.swift in Sources */,
 				B3B3173B208A5F3A006FF8C2 /* Date+Additions.swift in Sources */,
+				B3B3173D208A73CC006FF8C2 /* CoreDataManager.swift in Sources */,
+				B3B3174B208B4DCC006FF8C2 /* CoreDataTableViewController.swift in Sources */,
 				B3EEAD1B207FE973006DEE17 /* NotesTableViewController.swift in Sources */,
+				B3B31749208B415C006FF8C2 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +424,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B3B3173E208A7B39006FF8C2 /* EverpobreModels.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3B3173F208A7B39006FF8C2 /* EverpobreModels.xcdatamodel */,
+			);
+			currentVersion = B3B3173F208A7B39006FF8C2 /* EverpobreModels.xcdatamodel */;
+			path = EverpobreModels.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B3EEACFB207FE57D006DEE17 /* Project object */;
 }

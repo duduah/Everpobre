@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct Note {
-    let title: String
-    let date: Date
-    let expirationDate: Date
-    let noteTextView: String
-}
+//struct Note {
+//    let title: String
+//    let creationDate: Date
+//    let expirationDate: Date
+//    let noteTextView: String
+//
+//
+////    @NSManaged public var notebook: Notebook?
+////    @NSManaged public var photo: PhotoContainer?
+//}
 
